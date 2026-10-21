@@ -1,0 +1,45 @@
+{
+  "capturedAt": "2026-10-21T05:36:36.483Z",
+  "themeId": "722557302383787297",
+  "themeColor": "v8",
+  "source": "Weebly editor iframe network (cdn11.editmysite.com)",
+  "navStructure": "site/nav.json (aligned with editor menu: News, About, partners, works dropdown 2024-2009, Reviews; Contact in footer)",
+  "files": [
+    {
+      "file": "main_style2.css",
+      "url": "https://cdn11.editmysite.com/css/old/main_style2.css?buildtime=1792517296",
+      "status": 200,
+      "bytes": 15764
+    },
+    {
+      "file": "main.css",
+      "url": "https://cdn11.editmysite.com/css/main.css?buildtime=1792517296",
+      "status": 200,
+      "bytes": 196410
+    },
+    {
+      "file": "sites.css",
+      "url": "https://cdn11.editmysite.com/css/sites.css?buildtime=1792517296",
+      "status": 200,
+      "bytes": 210877
+    },
+    {
+      "file": "social-icons.css",
+      "url": "https://cdn11.editmysite.com/css/social-icons.css?buildtime=1792517296",
+      "status": 200,
+      "bytes": 12720
+    },
+    {
+      "file": "slideshow.css",
+      "url": "https://cdn11.editmysite.com/css/old/slideshow/slideshow.css?buildtime=1792517296",
+      "status": 200,
+      "bytes": 7353
+    },
+    {
+      "file": "open-sans-font.css",
+      "url": "https://cdn11.editmysite.com/fonts/Open_Sans/font.css?2",
+      "status": 200,
+      "bytes": 2602
+    }
+  ]
+}

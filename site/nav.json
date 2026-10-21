@@ -1,0 +1,31 @@
+{
+  "items": [
+    { "label": "最新消息 News", "slug": "03-news" },
+    { "label": "舞團介紹 About", "slug": "04-about" },
+    { "label": "合作藝術家 partners", "slug": "05-partners" },
+    {
+      "label": "歷年創作 works",
+      "slug": "06-works",
+      "children": [
+        { "label": "2024", "slug": "07-works-2024" },
+        { "label": "2023", "slug": "08-works-2023" },
+        { "label": "2022", "slug": "09-works-2022" },
+        { "label": "2021", "slug": "10-works-2021" },
+        { "label": "2020", "slug": "11-works-2020" },
+        { "label": "2019", "slug": "12-works-2019" },
+        { "label": "2018", "slug": "13-works-2018" },
+        { "label": "2017", "slug": "14-works-2017" },
+        { "label": "2016", "slug": "15-works-2016" },
+        { "label": "2015", "slug": "16-works-2015" },
+        { "label": "2014", "slug": "17-works-2014" },
+        { "label": "2013", "slug": "18-works-2013" },
+        { "label": "2012", "slug": "19-works-2012" },
+        { "label": "2011", "slug": "20-works-2011" },
+        { "label": "2010", "slug": "21-works-2010" },
+        { "label": "2009", "slug": "22-works-2009" }
+      ]
+    },
+    { "label": "評論 Reviews", "slug": "23-reviews" }
+  ],
+  "footer": [{ "label": "Contact", "slug": "24-contact" }]
+}

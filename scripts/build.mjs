@@ -5,11 +5,13 @@ import { fileURLToPath } from "node:url";
 import {
   allManifestSlugs,
   buildPageIdMap,
-  getNavItems,
   slugToOutFile,
 } from "./lib/routes.mjs";
 import { collectMediaRefs, decodeHtmlEntities, transformContent } from "./lib/html-transform.mjs";
 import { renderPage } from "./lib/layout.mjs";
+import { readSiteNav } from "./lib/nav.mjs";
+import { readSiteHome } from "./lib/home.mjs";
+import { readWorksLanding } from "./lib/works-landing.mjs";
 import { copyMediaFile, indexMediaDir, resolveMediaFile } from "./lib/media.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -50,11 +52,74 @@ function loadExtraPageIds(sourceDir) {
   }
 }
 
-function main() {
+function findUploadUrl(sourceDir, fileName) {
+  const urlsPath = path.join(sourceDir, "all_image_urls.json");
+  if (!fs.existsSync(urlsPath)) return null;
+  const urls = JSON.parse(fs.readFileSync(urlsPath, "utf8"));
+  const lower = fileName.toLowerCase();
+  return urls.find((u) => u.toLowerCase().includes(`/${lower}`) || u.toLowerCase().endsWith(lower));
+}
+
+function copyBundledSiteUpload(repoRoot, assetDir, relativePath, uploadsDestDir) {
+  const bundled = path.join(repoRoot, "site", "assets", assetDir, relativePath);
+  if (!fs.existsSync(bundled)) return false;
+  const destPath = path.join(uploadsDestDir, relativePath);
+  fs.mkdirSync(path.dirname(destPath), { recursive: true });
+  fs.copyFileSync(bundled, destPath);
+  return true;
+}
+
+async function ensureUploadFile({
+  fileName,
+  sourceDir,
+  mediaDir,
+  mediaIndex,
+  uploadsDestDir,
+  downloaded,
+  overrideUrl,
+  repoRoot,
+}) {
+  const destPath = path.join(uploadsDestDir, fileName);
+  if (fs.existsSync(destPath)) return true;
+
+  if (repoRoot && copyBundledSiteUpload(repoRoot, "home", fileName, uploadsDestDir)) {
+    downloaded.push({ fileName, url: "bundled:site/assets/home/" + fileName });
+    return true;
+  }
+  if (repoRoot && copyBundledSiteUpload(repoRoot, "works", fileName, uploadsDestDir)) {
+    downloaded.push({ fileName, url: "bundled:site/assets/works/" + fileName });
+    return true;
+  }
+
+  const resolved = resolveMediaFile(fileName, mediaIndex);
+  if (resolved) {
+    copyMediaFile(mediaDir, resolved, destPath);
+    return true;
+  }
+
+  const url = overrideUrl || findUploadUrl(sourceDir, fileName);
+  if (!url) return false;
+
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return false;
+    const buf = Buffer.from(await res.arrayBuffer());
+    fs.mkdirSync(path.dirname(destPath), { recursive: true });
+    fs.writeFileSync(destPath, buf);
+    downloaded.push({ fileName, url });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function main() {
   const sourceDir = parseArgs(process.argv);
   const config = JSON.parse(fs.readFileSync(path.join(repoRoot, "site", "config.json"), "utf8"));
   const manifest = JSON.parse(fs.readFileSync(path.join(repoRoot, "site", "manifest.json"), "utf8"));
   const pages = manifest.pages;
+  const home = readSiteHome(repoRoot);
+  const worksLanding = readWorksLanding(repoRoot);
 
   const basePath = config.basePath;
   const base = basePath.endsWith("/") ? basePath : `${basePath}/`;
@@ -62,7 +127,7 @@ function main() {
   const filesWebPrefix = `${base}files/`;
 
   const pageIdToSlug = buildPageIdMap(pages, loadExtraPageIds(sourceDir));
-  const navItems = getNavItems(pages, basePath);
+  const nav = readSiteNav(repoRoot);
 
   const docsDir = path.join(repoRoot, "docs");
   rimrafExceptNojekyll(docsDir);
@@ -70,10 +135,24 @@ function main() {
     fs.writeFileSync(path.join(docsDir, ".nojekyll"), "");
   }
 
-  const cssSrc = path.join(repoRoot, "site", "assets", "css", "site.css");
-  const cssDest = path.join(docsDir, "assets", "css", "site.css");
-  fs.mkdirSync(path.dirname(cssDest), { recursive: true });
-  fs.copyFileSync(cssSrc, cssDest);
+  const cssDir = path.join(docsDir, "assets", "css");
+  fs.mkdirSync(cssDir, { recursive: true });
+  fs.copyFileSync(
+    path.join(repoRoot, "site", "assets", "css", "weebly-overrides.css"),
+    path.join(cssDir, "weebly-overrides.css")
+  );
+
+  const weeblySrc = path.join(repoRoot, "site", "assets", "weebly");
+  const weeblyDest = path.join(docsDir, "assets", "weebly");
+  if (fs.existsSync(weeblySrc)) {
+    fs.mkdirSync(weeblyDest, { recursive: true });
+    for (const name of fs.readdirSync(weeblySrc)) {
+      const src = path.join(weeblySrc, name);
+      if (fs.statSync(src).isFile()) {
+        fs.copyFileSync(src, path.join(weeblyDest, name));
+      }
+    }
+  }
 
   const mediaDir = path.join(sourceDir, "media_all");
   const mediaIndex = indexMediaDir(mediaDir);
@@ -84,6 +163,12 @@ function main() {
   const allFiles = new Set();
   const missingLinks = [];
   const built = [];
+  const downloadedUploads = [];
+
+  if (home?.headerLogo) allUploads.add(home.headerLogo);
+  if (home?.heroLogo) allUploads.add(home.heroLogo);
+  if (home?.heroBackground) allUploads.add(home.heroBackground);
+  if (worksLanding?.heroBackground) allUploads.add(worksLanding.heroBackground);
 
   for (const slug of allManifestSlugs(pages)) {
     const pageMeta = pages.find((p) => p.slug === slug);
@@ -99,6 +184,7 @@ function main() {
       uploadsWebPrefix,
       filesWebPrefix,
       isContactPage: slug === "24-contact",
+      isHomePage: slug === "01-home-frontpage",
       contactEmail: config.contact.email,
     });
 
@@ -108,7 +194,9 @@ function main() {
 
     const fullHtml = renderPage({
       config,
-      navItems,
+      nav,
+      home,
+      worksLanding,
       pageTitle: pageMeta?.name || slug,
       bodyHtml,
       currentSlug: slug,
@@ -134,16 +222,38 @@ function main() {
     }
   }
 
+  const heroOverrideUrls = new Map();
+  if (home?.heroBackground && home?.heroBackgroundSourceUrl) {
+    heroOverrideUrls.set(home.heroBackground, home.heroBackgroundSourceUrl);
+  }
+  if (home?.headerLogo && home?.headerLogoSourceUrl) {
+    heroOverrideUrls.set(home.headerLogo, home.headerLogoSourceUrl);
+  }
+  if (home?.heroLogo && home?.heroLogoSourceUrl) {
+    heroOverrideUrls.set(home.heroLogo, home.heroLogoSourceUrl);
+  }
+  if (worksLanding?.heroBackground && worksLanding?.heroBackgroundSourceUrl) {
+    heroOverrideUrls.set(worksLanding.heroBackground, worksLanding.heroBackgroundSourceUrl);
+  }
+
   const missingMedia = [];
   let copiedUploads = 0;
   for (const name of allUploads) {
-    const resolved = resolveMediaFile(name, mediaIndex);
-    if (!resolved) {
-      if (!name.includes("投稿評論.pdf")) missingMedia.push(name);
+    const ok = await ensureUploadFile({
+      fileName: name,
+      sourceDir,
+      mediaDir,
+      mediaIndex,
+      uploadsDestDir,
+      downloaded: downloadedUploads,
+      overrideUrl: heroOverrideUrls.get(name),
+      repoRoot,
+    });
+    if (ok) {
+      copiedUploads++;
       continue;
     }
-    copyMediaFile(mediaDir, resolved, path.join(uploadsDestDir, name));
-    copiedUploads++;
+    if (!name.includes("投稿評論.pdf")) missingMedia.push(name);
   }
 
   for (const n of mediaIndex.names) {
@@ -169,10 +279,20 @@ function main() {
     filesCopied: copiedFiles,
     missingMedia,
     missingPageIdLinks: missingLinks,
+    downloadedUploads,
   };
 
   fs.writeFileSync(path.join(docsDir, "build-report.json"), JSON.stringify(report, null, 2), "utf8");
+
+  const paritySrc = path.join(repoRoot, "site", "theme-parity-checklist.md");
+  if (fs.existsSync(paritySrc)) {
+    fs.copyFileSync(paritySrc, path.join(docsDir, "theme-parity-checklist.md"));
+  }
+
   console.log(JSON.stringify(report, null, 2));
 }
 
-main();
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

@@ -27,8 +27,50 @@
     "reviews/index.html",
     "contact/index.html"
   ],
-  "uploadsCopied": 186,
+  "uploadsCopied": 195,
   "filesCopied": 4,
   "missingMedia": [],
-  "missingPageIdLinks": []
+  "missingPageIdLinks": [],
+  "downloadedUploads": [
+    {
+      "fileName": "1465271500.png",
+      "url": "bundled:site/assets/home/1465271500.png"
+    },
+    {
+      "fileName": "3409036.png",
+      "url": "bundled:site/assets/home/3409036.png"
+    },
+    {
+      "fileName": "background-images/2017304911.jpg",
+      "url": "bundled:site/assets/home/background-images/2017304911.jpg"
+    },
+    {
+      "fileName": "background-images/812874803.jpg",
+      "url": "bundled:site/assets/works/background-images/812874803.jpg"
+    },
+    {
+      "fileName": "3409036_1.png",
+      "url": "bundled:site/assets/home/3409036_1.png"
+    },
+    {
+      "fileName": "s-22594238_orig.jpg",
+      "url": "https://79072506-213136122765237639.preview.editmysite.com/uploads/7/9/0/7/79072506/s-22594238_orig.jpg"
+    },
+    {
+      "fileName": "s-22594236_orig.jpg",
+      "url": "https://79072506-213136122765237639.preview.editmysite.com/uploads/7/9/0/7/79072506/s-22594236_orig.jpg"
+    },
+    {
+      "fileName": "1850790222_2.jpg",
+      "url": "https://79072506-213136122765237639.preview.editmysite.com/uploads/7/9/0/7/79072506/1850790222_2.jpg"
+    },
+    {
+      "fileName": "373376935_2.jpg",
+      "url": "https://79072506-213136122765237639.preview.editmysite.com/uploads/7/9/0/7/79072506/373376935_2.jpg"
+    },
+    {
+      "fileName": "905959664_2.jpg",
+      "url": "https://79072506-213136122765237639.preview.editmysite.com/uploads/7/9/0/7/79072506/905959664_2.jpg"
+    }
+  ]
 }
