@@ -1,0 +1,250 @@
+{
+  "site": "Solar Site Dance Theatre",
+  "siteId": "213136122765237639",
+  "userId": "79072506",
+  "subdomain": "solarsitedancetheatre.weebly.com",
+  "backupStarted": "2026-10-21",
+  "method": "editor-preview-a11y-snapshot",
+  "pages": [
+    {
+      "order": 1,
+      "name": "首頁 frontpage",
+      "slug": "01-home-frontpage",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "641017285901690272",
+      "imageCount": 0,
+      "htmlLength": 3906
+    },
+    {
+      "order": 2,
+      "name": "2016 水圍花城",
+      "slug": "02-2016-shuwei-huacheng",
+      "hiddenInNav": true,
+      "status": "completed",
+      "pageId": "655847020542824413",
+      "imageCount": 0,
+      "htmlLength": 9460
+    },
+    {
+      "order": 3,
+      "name": "最新消息 News",
+      "slug": "03-news",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "878421162489173799",
+      "imageCount": 0,
+      "htmlLength": 22894
+    },
+    {
+      "order": 4,
+      "name": "舞團介紹 About",
+      "slug": "04-about",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "833504771173359924",
+      "imageCount": 0,
+      "htmlLength": 58796
+    },
+    {
+      "order": 5,
+      "name": "合作藝術家 partners",
+      "slug": "05-partners",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "791066737683714006",
+      "imageCount": 0,
+      "htmlLength": 54856
+    },
+    {
+      "order": 6,
+      "name": "歷年創作 works",
+      "slug": "06-works",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "708031466638413402",
+      "imageCount": 0,
+      "htmlLength": 6853
+    },
+    {
+      "order": 7,
+      "name": "2024",
+      "slug": "07-works-2024",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "619805162368703026",
+      "imageCount": 0,
+      "htmlLength": 21436
+    },
+    {
+      "order": 8,
+      "name": "2023",
+      "slug": "08-works-2023",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "824501936664019276",
+      "imageCount": 0,
+      "htmlLength": 21505
+    },
+    {
+      "order": 9,
+      "name": "2022",
+      "slug": "09-works-2022",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "503641405354580857",
+      "imageCount": 0,
+      "htmlLength": 22194
+    },
+    {
+      "order": 10,
+      "name": "2021",
+      "slug": "10-works-2021",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "843739262416083039",
+      "imageCount": 0,
+      "htmlLength": 19342
+    },
+    {
+      "order": 11,
+      "name": "2020",
+      "slug": "11-works-2020",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "778055773279913382",
+      "imageCount": 0,
+      "htmlLength": 18416
+    },
+    {
+      "order": 12,
+      "name": "2019",
+      "slug": "12-works-2019",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "848146635590208924",
+      "imageCount": 0,
+      "htmlLength": 4815
+    },
+    {
+      "order": 13,
+      "name": "2018",
+      "slug": "13-works-2018",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "150476870861864774",
+      "imageCount": 0,
+      "htmlLength": 16369
+    },
+    {
+      "order": 14,
+      "name": "2017",
+      "slug": "14-works-2017",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "956032690805174736",
+      "imageCount": 0,
+      "htmlLength": 19133
+    },
+    {
+      "order": 15,
+      "name": "2016",
+      "slug": "15-works-2016",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "741253820534883810",
+      "imageCount": 0,
+      "htmlLength": 19706
+    },
+    {
+      "order": 16,
+      "name": "2015",
+      "slug": "16-works-2015",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "221723969291774289",
+      "imageCount": 0,
+      "htmlLength": 20660
+    },
+    {
+      "order": 17,
+      "name": "2014",
+      "slug": "17-works-2014",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "309248643646782958",
+      "imageCount": 0,
+      "htmlLength": 20966
+    },
+    {
+      "order": 18,
+      "name": "2013",
+      "slug": "18-works-2013",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "133930337384819594",
+      "imageCount": 0,
+      "htmlLength": 19618
+    },
+    {
+      "order": 19,
+      "name": "2012",
+      "slug": "19-works-2012",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "585724778508815366",
+      "imageCount": 0,
+      "htmlLength": 12930
+    },
+    {
+      "order": 20,
+      "name": "2011",
+      "slug": "20-works-2011",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "473373129471673406",
+      "imageCount": 0,
+      "htmlLength": 19913
+    },
+    {
+      "order": 21,
+      "name": "2010",
+      "slug": "21-works-2010",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "271683326303996653",
+      "imageCount": 0,
+      "htmlLength": 14594
+    },
+    {
+      "order": 22,
+      "name": "2009",
+      "slug": "22-works-2009",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "539722278243836066",
+      "imageCount": 0,
+      "htmlLength": 8941
+    },
+    {
+      "order": 23,
+      "name": "評論 Reviews",
+      "slug": "23-reviews",
+      "hiddenInNav": false,
+      "status": "completed",
+      "pageId": "535761673408232576",
+      "imageCount": 0,
+      "htmlLength": 67396
+    },
+    {
+      "order": 24,
+      "name": "Contact",
+      "slug": "24-contact",
+      "hiddenInNav": true,
+      "status": "completed",
+      "pageId": "895006242256472259",
+      "imageCount": 0,
+      "htmlLength": 9638
+    }
+  ]
+}
