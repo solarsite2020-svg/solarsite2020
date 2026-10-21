@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" class="page-home-html">
+<html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,108 +8,55 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/solarsite2020/assets/weebly/open-sans-font.css">
-  <link rel="stylesheet" href="/solarsite2020/assets/weebly/main.css">
-  <link rel="stylesheet" href="/solarsite2020/assets/weebly/sites.css">
-  <link rel="stylesheet" href="/solarsite2020/assets/weebly/social-icons.css">
-  <link rel="stylesheet" href="/solarsite2020/assets/weebly/slideshow.css">
-  <link rel="stylesheet" href="/solarsite2020/assets/css/weebly-overrides.css">
+  <link rel="stylesheet" href="/solarsite2020/assets/css/site.css">
 </head>
-<body class="page-home">
-  <div id="wrapper">
-    <div id="header-wrap">
-      <div class="header-inner">
-        <div id="logo">
-          <a href="/solarsite2020/" class="site-logo-link"><img class="site-header-logo" src="/solarsite2020/uploads/7/9/0/7/79072506/1465271500.png" alt="Solar Site Dance Theatre"></a>
-        </div>
-        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="navigation">選單</button>
-        <div id="navigation" class="collapsed" aria-label="主選單">
-          <ul class="wsite-menu-default">
-            <li class="wsite-menu-item-wrap"><a href="/solarsite2020/news/" class="wsite-menu-item">最新消息 News</a></li>
-<li class="wsite-menu-item-wrap"><a href="/solarsite2020/about/" class="wsite-menu-item">舞團介紹 About</a></li>
-<li class="wsite-menu-item-wrap"><a href="/solarsite2020/partners/" class="wsite-menu-item">合作藝術家 partners</a></li>
-<li class="wsite-menu-item-wrap has-submenu">
-          <a href="/solarsite2020/works/" class="wsite-menu-item">歷年創作 works</a>
-          <ul class="wsite-menu-subitem-wrap wsite-menu-subitem"><li class="wsite-menu-subitem-wrap"><a href="/solarsite2020/works/2024/" class="wsite-menu-subitem">2024</a></li><li class="wsite-menu-subitem-wrap"><a href="/solarsite2020/works/2023/" class="wsite-menu-subitem">2023</a></li><li class="wsite-menu-subitem-wrap"><a href="/solarsite2020/works/2022/" class="wsite-menu-subitem">2022</a></li><li class="wsite-menu-subitem-wrap"><a href="/solarsite2020/works/2021/" class="wsite-menu-subitem">2021</a></li><li class="wsite-menu-subitem-wrap"><a href="/solarsite2020/works/2020/" class="wsite-menu-subitem">2020</a></li><li class="wsite-menu-subitem-wrap"><a href="/solarsite2020/works/2019/" class="wsite-menu-subitem">2019</a></li><li class="wsite-menu-subitem-wrap"><a href="/solarsite2020/works/2018/" class="wsite-menu-subitem">2018</a></li><li class="wsite-menu-subitem-wrap"><a href="/solarsite2020/works/2017/" class="wsite-menu-subitem">2017</a></li><li class="wsite-menu-subitem-wrap"><a href="/solarsite2020/works/2016/" class="wsite-menu-subitem">2016</a></li><li class="wsite-menu-subitem-wrap"><a href="/solarsite2020/works/2015/" class="wsite-menu-subitem">2015</a></li><li class="wsite-menu-subitem-wrap"><a href="/solarsite2020/works/2014/" class="wsite-menu-subitem">2014</a></li><li class="wsite-menu-subitem-wrap"><a href="/solarsite2020/works/2013/" class="wsite-menu-subitem">2013</a></li><li class="wsite-menu-subitem-wrap"><a href="/solarsite2020/works/2012/" class="wsite-menu-subitem">2012</a></li><li class="wsite-menu-subitem-wrap"><a href="/solarsite2020/works/2011/" class="wsite-menu-subitem">2011</a></li><li class="wsite-menu-subitem-wrap"><a href="/solarsite2020/works/2010/" class="wsite-menu-subitem">2010</a></li><li class="wsite-menu-subitem-wrap"><a href="/solarsite2020/works/2009/" class="wsite-menu-subitem">2009</a></li></ul>
+<body class="flex h-screen flex-col overflow-hidden bg-neutral-950 text-white">
+  <header class="border-b border-neutral-200 bg-white">
+  <div class="mx-auto flex max-w-[1400px] flex-wrap items-center gap-4 px-5 py-2.5">
+    <a href="/solarsite2020/" class="shrink-0">
+      <img src="/solarsite2020/uploads/7/9/0/7/79072506/1465271500.png" alt="Solar Site Dance Theatre" class="h-[72px] w-auto max-w-[420px] object-contain object-left" width="420" height="72">
+    </a>
+    <nav class="ml-auto hidden flex-wrap items-center justify-end gap-x-6 gap-y-1 md:flex" aria-label="主選單">
+      <ul class="flex flex-wrap items-center gap-x-6 gap-y-1"><li><a href="/solarsite2020/news/" class="nav-link">最新消息 News</a></li>
+<li><a href="/solarsite2020/about/" class="nav-link">舞團介紹 About</a></li>
+<li><a href="/solarsite2020/partners/" class="nav-link">合作藝術家 partners</a></li>
+<li class="group relative">
+          <a href="/solarsite2020/works/" class="nav-link">歷年創作 works</a>
+          <ul class="absolute right-0 top-full z-50 hidden min-w-[5.5rem] max-h-[70vh] overflow-y-auto border border-neutral-200 bg-white py-1 shadow-md group-hover:block group-focus-within:block"><li><a href="/solarsite2020/works/2024/" class="nav-sublink">2024</a></li><li><a href="/solarsite2020/works/2023/" class="nav-sublink">2023</a></li><li><a href="/solarsite2020/works/2022/" class="nav-sublink">2022</a></li><li><a href="/solarsite2020/works/2021/" class="nav-sublink">2021</a></li><li><a href="/solarsite2020/works/2020/" class="nav-sublink">2020</a></li><li><a href="/solarsite2020/works/2019/" class="nav-sublink">2019</a></li><li><a href="/solarsite2020/works/2018/" class="nav-sublink">2018</a></li><li><a href="/solarsite2020/works/2017/" class="nav-sublink">2017</a></li><li><a href="/solarsite2020/works/2016/" class="nav-sublink">2016</a></li><li><a href="/solarsite2020/works/2015/" class="nav-sublink">2015</a></li><li><a href="/solarsite2020/works/2014/" class="nav-sublink">2014</a></li><li><a href="/solarsite2020/works/2013/" class="nav-sublink">2013</a></li><li><a href="/solarsite2020/works/2012/" class="nav-sublink">2012</a></li><li><a href="/solarsite2020/works/2011/" class="nav-sublink">2011</a></li><li><a href="/solarsite2020/works/2010/" class="nav-sublink">2010</a></li><li><a href="/solarsite2020/works/2009/" class="nav-sublink">2009</a></li></ul>
         </li>
-<li class="wsite-menu-item-wrap"><a href="/solarsite2020/reviews/" class="wsite-menu-item">評論 Reviews</a></li>
-          </ul>
-        </div>
+<li><a href="/solarsite2020/reviews/" class="nav-link">評論 Reviews</a></li></ul>
+    </nav>
+    <details class="relative ml-auto md:hidden">
+      <summary class="cursor-pointer list-none rounded border border-neutral-300 bg-neutral-100 px-3 py-1.5 text-sm text-neutral-800 marker:content-none">選單</summary>
+      <div class="absolute right-0 z-50 mt-2 min-w-[12rem] rounded border border-neutral-200 bg-white p-3 shadow-lg">
+        <ul class="space-y-1"><li><a href="/solarsite2020/news/" class="block py-2 text-sm text-neutral-700">最新消息 News</a></li>
+<li><a href="/solarsite2020/about/" class="block py-2 text-sm text-neutral-700">舞團介紹 About</a></li>
+<li><a href="/solarsite2020/partners/" class="block py-2 text-sm text-neutral-700">合作藝術家 partners</a></li>
+<li><a href="/solarsite2020/works/" class="block py-2 text-sm text-neutral-700">歷年創作 works</a><ul class="pb-2"><li><a href="/solarsite2020/works/2024/" class="block py-1 pl-4 text-sm text-neutral-600">2024</a></li><li><a href="/solarsite2020/works/2023/" class="block py-1 pl-4 text-sm text-neutral-600">2023</a></li><li><a href="/solarsite2020/works/2022/" class="block py-1 pl-4 text-sm text-neutral-600">2022</a></li><li><a href="/solarsite2020/works/2021/" class="block py-1 pl-4 text-sm text-neutral-600">2021</a></li><li><a href="/solarsite2020/works/2020/" class="block py-1 pl-4 text-sm text-neutral-600">2020</a></li><li><a href="/solarsite2020/works/2019/" class="block py-1 pl-4 text-sm text-neutral-600">2019</a></li><li><a href="/solarsite2020/works/2018/" class="block py-1 pl-4 text-sm text-neutral-600">2018</a></li><li><a href="/solarsite2020/works/2017/" class="block py-1 pl-4 text-sm text-neutral-600">2017</a></li><li><a href="/solarsite2020/works/2016/" class="block py-1 pl-4 text-sm text-neutral-600">2016</a></li><li><a href="/solarsite2020/works/2015/" class="block py-1 pl-4 text-sm text-neutral-600">2015</a></li><li><a href="/solarsite2020/works/2014/" class="block py-1 pl-4 text-sm text-neutral-600">2014</a></li><li><a href="/solarsite2020/works/2013/" class="block py-1 pl-4 text-sm text-neutral-600">2013</a></li><li><a href="/solarsite2020/works/2012/" class="block py-1 pl-4 text-sm text-neutral-600">2012</a></li><li><a href="/solarsite2020/works/2011/" class="block py-1 pl-4 text-sm text-neutral-600">2011</a></li><li><a href="/solarsite2020/works/2010/" class="block py-1 pl-4 text-sm text-neutral-600">2010</a></li><li><a href="/solarsite2020/works/2009/" class="block py-1 pl-4 text-sm text-neutral-600">2009</a></li></ul></li>
+<li><a href="/solarsite2020/reviews/" class="block py-2 text-sm text-neutral-700">評論 Reviews</a></li></ul>
       </div>
-    </div>
-    <div id="main-wrap" class="home-hero" style="--home-hero-bg: url('/solarsite2020/uploads/7/9/0/7/79072506/background-images/2017304911.jpg')">
-      <div id="wsite-content" class="wsite-elements weebly-content">
-        <div class="element" id="228901239939086430"><div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0;margin-right:0;text-align:left">
-<a>
-<img src="/solarsite2020/uploads/7/9/0/7/79072506/3409036_1.png" alt="Picture" style="width:auto;max-width:100%" />
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-<div class="element paragraph editable-text" id="470783569957640426" style="text-align:left;"><font size="2">&#8203;81358&#39640;&#38596;&#24066;&#24038;&#29151;&#21312;&#26126;&#33775;&#19968;&#36335;205&#34399;2&#27155;<br />2F, NO.205, Minghua 1st Rd., Zuoying Dist., Kaohsiung City 81358, Taiwan (R.O.C)<br />TEL: 886-7-5581223 &nbsp;FAX: 886-7-5509730<br />E-mail:&nbsp;</font><a href="mailto:solar.site@msa.hinet.net"><font size="2">solar.site@msa.hinet.net</font></a></div>
-
-
-<div class="element" id="770004045976519898"><div class="wsite-multicol"></div></div>
-
-
-
-
-
-
-
-
-
-<a href='https://www.facebook.com/索拉舞蹈空間-107752725946752/' target='_blank'>
-
-
-
-
-
-<div class="element" id="716865557976254364"><div class="wsite-image wsite-image-border-none " style="padding-top:20px;padding-bottom:0px;margin-left:0px;margin-right:0px;text-align:left">
-<a href='https://www.facebook.com/索拉舞蹈空間-107752725946752/' target='_blank'>
-<img src="/solarsite2020/uploads/7/9/0/7/79072506/5644922_1.png" alt="Picture" style="width:46px;max-width:100%" />
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-
-
-
-
-
-
-
-
-
-<a href='https://www.youtube.com/user/solarsite/videos?sort=dd&shelf_id=0&view=0' target='_blank'>
-
-
-
-
-
-<div class="element" id="498782526135941425"><div class="wsite-image wsite-image-border-none " style="padding-top:20px;padding-bottom:0px;margin-left:0px;margin-right:0px;text-align:left">
-<a href='https://www.youtube.com/user/solarsite/videos?sort=dd&shelf_id=0&view=0' target='_blank'>
-<img src="/solarsite2020/uploads/7/9/0/7/79072506/8305300_1.png" alt="Picture" style="width:48px;max-width:100%" />
-</a>
-<div style="display:block;font-size:90%"></div>
-</div></div>
-<div class="element" id="342562725369804888"><div style="height: 10px; overflow: hidden; width: 0px;"></div>
-<hr class="styled-hr" style="width:0px;"></hr>
-<div style="height: 10px; overflow: hidden; width: 0px;"></div></div>
-<div class="element paragraph editable-text" id="439105786474225459" style="text-align:left;"><font size="2">&#8251;&#26412;&#32178;&#31449;&#20043;&#22294;&#29255;&#21450;&#36039;&#26009;&#28858;&#32034;&#25289;&#33310;&#36424;&#31354;&#38291;&#25152;&#26377;&#65292;&#35531;&#21247;&#33258;&#34892;&#36681;&#36617;&#36039;&#26009;&#21450;&#22294;&#29255;</font></div>
-      </div>
-    </div>
-    
+    </details>
   </div>
-  <script>
-    (function () {
-      var btn = document.querySelector('.nav-toggle');
-      var nav = document.getElementById('navigation');
-      if (!btn || !nav) return;
-      btn.addEventListener('click', function () {
-        var open = nav.classList.toggle('open');
-        nav.classList.toggle('collapsed', !open);
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    })();
-  </script>
+</header>
+  <main class="home-hero flex-1" style="background-image: url('/solarsite2020/uploads/7/9/0/7/79072506/background-images/2017304911.jpg')">
+    <div class="relative z-10 max-w-lg px-6 py-10 text-sm leading-relaxed sm:px-10 sm:py-12">
+      <img src="/solarsite2020/uploads/7/9/0/7/79072506/3409036_1.png" alt="Solar Site Dance Theatre" class="mb-4 max-w-full" width="400" height="auto">
+      <p class="text-white/95">
+        81358高雄市左營區明華一路205號2樓<br>
+        2F, NO.205, Minghua 1st Rd., Zuoying Dist., Kaohsiung City 81358, Taiwan (R.O.C)<br>
+        TEL: 886-7-5581223 &nbsp; FAX: 886-7-5509730<br>
+        E-mail: <a href="mailto:solar.site@msa.hinet.net" class="text-sky-100 underline">solar.site@msa.hinet.net</a>
+      </p>
+      <div class="mt-5 flex gap-3">
+        <a href="https://www.facebook.com/索拉舞蹈空間-107752725946752/" target="_blank" rel="noopener noreferrer">
+          <img src="/solarsite2020/uploads/7/9/0/7/79072506/5644922_1.png" alt="Facebook" width="46" height="46" class="h-11 w-11">
+        </a>
+        <a href="https://www.youtube.com/user/solarsite/videos?sort=dd&amp;shelf_id=0&amp;view=0" target="_blank" rel="noopener noreferrer">
+          <img src="/solarsite2020/uploads/7/9/0/7/79072506/8305300_1.png" alt="YouTube" width="48" height="48" class="h-12 w-12">
+        </a>
+      </div>
+      <p class="mt-8 text-xs text-white/80">※本網站之圖片及資料為索拉舞蹈空間所有，請勿自行轉載資料及圖片</p>
+    </div>
+  </main>
 </body>
 </html>

@@ -1,0 +1,17 @@
+{
+  "name": "solarsite2020",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/styles/site.css -o ./docs/assets/css/site.css --minify",
+    "watch:css": "tailwindcss -i ./src/styles/site.css -o ./docs/assets/css/site.css --watch",
+    "preview": "npx --yes serve docs -l 8787",
+    "fix:partners-encoding": "node scripts/fix-partners-encoding.mjs"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
+  }
+}
